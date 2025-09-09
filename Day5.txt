@@ -1,0 +1,15 @@
+https://api.jsonbin.io/v3/b/68bc79dbae596e708fe4e8c6
+
+as given API 
+
+list users data from this API 
+
+create Table then list Images , First Name , Lastname, Phone ,address, track ,cources and position 
+
+
+///////////////////
+
+create todo list  
+زرار ادخال وجمبة زرار للحفظ لما تكتبي اسم التاسك تضغيطي علية يحفظة وتلاقية ظهر تحت وهكذا كل اما تضيفي وكل عنصر جمبة زرار delete  لو ضغطي علية يتحذف هو والعنصر بتاعة
+
+ولما تضغطي علي اسم التاسك يتحول رمادي وعلية خط ولو ضغطي علية تاني يرجع لونة اسود ويروح الخط الي علية 
