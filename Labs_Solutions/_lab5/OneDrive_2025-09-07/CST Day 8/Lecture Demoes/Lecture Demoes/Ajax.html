@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <style>
+       div{
+           width:400px;
+           height:400px;
+           background-color:lightskyblue;
+           overflow:auto
+
+       }
+   </style>
+</head>
+<body>
+
+    <input type="button" value="LoadText" id="txtbtn" />
+
+    <input type="button" value="Loadhtml" id="htmlbtn" />
+
+
+    <input type="button" value="Loadjson" id="jsonbtn" />
+
+    <input type="button" value="LoadData" id="databtn" />
+
+
+    <br /></br>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        txtbtn = document.querySelector("#txtbtn")
+        htmlbtn = document.querySelector("#htmlbtn")
+        jsonbtn = document.querySelector("#jsonbtn")
+        databtn = document.querySelector("#databtn")
+        result = document.querySelector("div")
+        txtbtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", "https://localhost:44359/Notes.txt", true)
+            xhr.send("")
+            // event handeling
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    // console.log(xhr.responseText)
+                    result.innerText = xhr.responseText;
+                }
+
+            }
+
+        })
+
+
+        // load html
+        htmlbtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", "https://localhost:44359/child.html", true)
+            xhr.send("")
+            // event handeling
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    // console.log(xhr.responseText)
+                    result.innerHTML = xhr.responseText;
+                }
+
+            }
+
+        })
+
+
+
+        // json
+
+
+        jsonbtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", "https://localhost:44359/std.json", true)
+            xhr.send("")
+            // event handeling
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    console.log(xhr.responseText)
+                    //result.innerHTML = xhr.responseText;
+                    myobj = JSON.parse(xhr.responseText)
+                    result.innerText = myobj.name + " : " + myobj.position
+                }
+
+            }
+
+        })
+
+        // load data from Server 
+        databtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true)
+            xhr.send("")
+            // event handeling
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    console.log(xhr.responseText)
+                    users = JSON.parse(xhr.responseText)
+                    users.forEach(function (elm) {
+                        result.innerHTML+=elm.name+ " : "+elm.username+"<br/>"
+
+                    })
+                }
+
+            }
+
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

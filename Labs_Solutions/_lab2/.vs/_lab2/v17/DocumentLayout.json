@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gghdmghwry\\Desktop\\ITI \u0645\u0646\u062D\u0629\\Html \u0026 CSS \u0026 JS\\JavaScript\\labs\\_lab2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gghdmghwry\\Desktop\\ITI \u0645\u0646\u062D\u0629\\Html \u0026 CSS \u0026 JS\\JavaScript\\labs\\_lab3\\_lab3.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gghdmghwry\\Desktop\\ITI \u0645\u0646\u062D\u0629\\Html \u0026 CSS \u0026 JS\\JavaScript\\labs\\_lab3\\_lab3.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_lab3.js",
+              "DocumentMoniker": "C:\\Users\\gghdmghwry\\Desktop\\ITI \u0645\u0646\u062D\u0629\\Html \u0026 CSS \u0026 JS\\JavaScript\\labs\\_lab3\\_lab3.js",
+              "RelativeDocumentMoniker": "..\\_lab3\\_lab3.js",
+              "ToolTip": "C:\\Users\\gghdmghwry\\Desktop\\ITI \u0645\u0646\u062D\u0629\\Html \u0026 CSS \u0026 JS\\JavaScript\\labs\\_lab3\\_lab3.js",
+              "RelativeToolTip": "..\\_lab3\\_lab3.js",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAHAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-03T04:37:18.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_lab3.html",
+              "DocumentMoniker": "C:\\Users\\gghdmghwry\\Desktop\\ITI \u0645\u0646\u062D\u0629\\Html \u0026 CSS \u0026 JS\\JavaScript\\labs\\_lab3\\_lab3.html",
+              "RelativeDocumentMoniker": "..\\_lab3\\_lab3.html",
+              "ToolTip": "C:\\Users\\gghdmghwry\\Desktop\\ITI \u0645\u0646\u062D\u0629\\Html \u0026 CSS \u0026 JS\\JavaScript\\labs\\_lab3\\_lab3.html",
+              "RelativeToolTip": "..\\_lab3\\_lab3.html",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-03T04:37:10.543Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

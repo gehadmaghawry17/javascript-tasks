@@ -1,0 +1,62 @@
+﻿Ajax ===> 
+Asyncrounous javascript and XML
+
+
+client side 
+
+GEt Data
+
+xmlhttprequest 
+
+sync 
+
+xmlHTTPRequest
+
+// props 
+
+ready state
+0 : connectio not set 
+1: open connection with server 
+2: server reciecve req 
+3: server response 
+4: res delivered to client 
+
+status
+100  : waitable 
+200  : data sent 
+300   : recrict 
+400  : errors 
+500   :  server Error 
+
+
+statusText
+
+methods 
+open("GET",uri,true,username)
+send ("")
+Event 
+readystatechange
+
+
+
+
+
+
+
+
+
+
+
+Ahmed Nagi 
+Osama gamal 
+Ahmed Abdelwahed 
+
+
+
+
+
+
+
+
+
+

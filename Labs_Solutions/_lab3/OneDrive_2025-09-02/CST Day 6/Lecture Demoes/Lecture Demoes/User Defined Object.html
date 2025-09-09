@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <script>
+       // user defined Object 
+       var arr = {}// Literal Obj 
+       // key value Paired 
+       var car = {
+           //key:value,
+           color: "red",
+           model: 2026,
+           brand: "BMW",
+           _name: "X6",
+           available: function () {
+               console.log("%c Car is Available Now", "color:red")
+           },
+           price: function (num) {
+               if (num < 300000) { 
+                   console.log(`price = ${num + num * 5}`)
+               }
+               else {
+                   console.log(`price = ${num + num * 3}`)
+
+               }
+           },
+           pinkcolor: false,
+           Classes: ["1st", "2nd", "3rd"],
+
+           sponor: {fname:"Ellithy",address:"cairo"}
+       }
+
+       car.color// getting 
+       car.color = "black";
+       car.Classes.push("4th")
+       car["model"]// getting 
+       //car["available"]()
+       //car["available"]()
+       car.motor = "2000cc"
+       //delete car.model
+       delete car.pinkcolor
+       car["sponor"]["fname"]
+
+       // in operator 
+       'color' in car // true
+       'cover' in car// false 
+       'toString' in car// true
+       car.hasOwnProperty("color")// true 
+       car.hasOwnProperty("toString")// false
+
+       //for (i in car) {
+       //    // console.log(i+" : "+car[i])
+       //    console.log(i )
+       //}
+
+
+       Object.keys(car)//['color', 'model', 'brand', '_name', 'available', 'price', 'Classes', 'sponor', 'motor']
+
+       car2 = car;// shallow copy 
+       Object.freeze(car)
+
+
+
+       // constructor Function 
+       function Employee(_fname,_age,_salary) {
+           this.fname = _fname;
+           this.age = _age;
+           this.salary=_salary
+          // salary = _salary;//private
+           //setters &getters
+           //this.setSalary = function (sal) {
+           //    if (sal < 0) {
+           //        console.log("%c wrong Salary", "color:red;font:bold 20px agness")
+           //    }
+           //    else {
+           //        this.salary = sal;
+           //    }
+           //}
+
+
+           //this.getSalary = function () {
+           //    return this.salary;
+           //}
+
+           this.print = function () {
+               console.log(`Name : ${this.fname} age :${this.age} salary : ${this.salary}`)
+           }
+
+
+       }
+      // Employee()// call 
+       var emp = new Employee("ali", 30,2000)// object creation
+       typeof emp
+
+       emp.constructor.name
+
+       var Emps = [
+           new Employee("ziad", 30, 9000),
+           new Employee("basma", 25, 7000),
+           new Employee("kareem", 22, 5000),
+           new Employee("Doaa", 28, 20000),
+           new Employee("Ahmed", 40, 50000)
+       ]
+
+       Emps.forEach(function (elm) {
+           elm.print()
+       })
+       console.log("***********Filter")
+     result=  Emps.filter(function (elm) {
+           return elm.salary>10000
+
+       })
+
+
+       result.forEach(function (elm) {
+           elm.print()
+       })
+       console.log("***********sort by age")
+
+       Emps.sort(function (a,b) {
+           return a.age -b.age
+       })
+       Emps.forEach(function (elm) {
+           elm.print()
+       })
+
+       console.log("***********sort by age")
+       Emps.sort(function (a,b) {
+           if (a.fname.toLowerCase() > b.fname.toLowerCase())
+               return 1
+           else if (a.fname.toLowerCase() < b.fname.toLowerCase())
+           return -1
+           else
+               return 0;
+       })
+       Emps.forEach(function (elm) {
+           elm.print()
+       })
+
+   </script>
+</head>
+<body>
+
+</body>
+</html>

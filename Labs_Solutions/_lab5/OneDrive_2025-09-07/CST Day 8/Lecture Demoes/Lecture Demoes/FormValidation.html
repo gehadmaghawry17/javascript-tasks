@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .error{
+            font:bold 10px tahoma;
+            color:red;
+        }
+    </style>
+   
+</head>
+<body>
+    <form>
+        <label for="user">UserName</label>
+        <input type="text" name="user" id="user" />
+        <label id="usererror"></label><br /><br />
+
+        <label for="user">Email</label>
+        <input type="email" name="email" id="email" />
+        <label id="emailerror"> </label><br /><br />
+
+        <label for="age">UserAge</label>
+        <input type="number" name="age" id="age" />
+        <label id="ageerror">
+
+        </label><br /><br />
+
+        <input type="submit" value="Register" />
+    </form>
+
+    <script>
+        // Selectors
+        myform = document.querySelector("form")
+        usererror = document.querySelector("#usererror")
+        emilerror = document.querySelector("#emailerror")
+        ageerror = document.querySelector("#ageerror")
+
+       
+        emailval = email.value;
+        ageval=age.value
+
+
+        myform.addEventListener('submit', function (e) {
+
+            e.preventDefault();
+
+            // user error handel 
+            if (user.value.trim() == "" || user.value.trim().length < 3) {
+                usererror.innerText = "User musn't be null or less than 3"
+                usererror.classList.add("error")
+            }
+            else {
+                usererror.innerText =""
+            }
+
+
+            // Email error handel 
+            if (email.value.trim() == "" || !email.value.includes("@")) {
+                emailerror.innerText = "Insert Correct Email"
+                emailerror.classList.add("error")
+            }
+            else {
+                emailerror.innerText = ""
+            }
+
+
+
+
+            //Age Error Handeling
+
+
+            // Email error handel 
+            if (age.value == "" || parseInt(age.value)<18) {
+                ageerror.innerText = "Insert Correct Age must be more 18"
+                ageerror.classList.add("error")
+            }
+            else {
+                ageerror.innerText = ""
+            }
+
+
+            if (usererror.innerText == "" && emailerror.innerText == "" && ageerror.innerText == "") {
+                alert("Validaton Done 👍")
+            }
+
+        })
+
+    </script>
+
+
+</body>
+</html>

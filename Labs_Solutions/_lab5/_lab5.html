@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: lightskyblue;
+            overflow: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+       
+
+    </style>
+</head>
+<body>
+
+    <input type="button" value="LoadText" id="txtbtn" />
+    <input type="button" value="Loadhtml" id="htmlbtn" />
+    <input type="button" value="Loadjson" id="jsonbtn" />
+    <input type="button" value="LoadData" id="databtn" />
+
+    <div id="result"></div>
+    <h3>To do list</h3>
+    <input type="text" id="taskInput" placeholder="Enter task name">
+    <button id="addBtn">Add</button>
+
+    <ul id="taskList"></ul>
+   
+
+
+    <script>
+        let txtbtn = document.querySelector("#txtbtn");
+        let htmlbtn = document.querySelector("#htmlbtn");
+        let jsonbtn = document.querySelector("#jsonbtn");
+        let databtn = document.querySelector("#databtn");
+        let result = document.querySelector("div");
+
+        // Load Text
+        txtbtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://localhost:44359/Notes.txt", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    result.innerText = xhr.responseText;
+                }
+            }
+        });
+
+        // Load HTML
+        htmlbtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://api.jsonbin.io/v3/b/68bc79dbae596e708fe4e8c6", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    result.innerHTML = xhr.responseText;
+                }
+            }
+        });
+
+        // Load JSON (from local file)
+        jsonbtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://localhost:44359/std.json", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    let myobj = JSON.parse(xhr.responseText);
+                    result.innerText = myobj.name + " : " + myobj.position;
+                }
+            }
+        });
+
+        // Load Data (Table)
+        databtn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://api.jsonbin.io/v3/b/68bc79dbae596e708fe4e8c6", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    var response = JSON.parse(xhr.responseText);
+                    var users = response.record;
+
+                    var table = `
+                                    <table>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Phone</th>
+                                            <th>Address</th>
+                                            <th>Track</th>
+                                            <th>Courses</th>
+                                            <th>Position</th>
+                                        </tr>
+                                `;
+
+                    users.forEach(function (user) {
+                        table += `
+                                        <tr>
+                                            <td><img src="${user.image}" width="50"></td>
+                                            <td>${user.firstName}</td>
+                                            <td>${user.lastName}</td>
+                                            <td>${user.phone}</td>
+                                            <td>${user.address}</td>
+                                            <td>${user.track}</td>
+                                            <td>${user.courses.join(", ")}</td>
+                                            <td>${user.position}</td>
+                                        </tr>
+                                    `;
+                    });
+
+                    table += `</table>`;
+                    document.getElementById("result").innerHTML = table;
+                }
+            }
+        });
+
+        //-------------
+
+        let addBtn = document.getElementById("addBtn");
+        let taskInput = document.getElementById("taskInput");
+        let taskList = document.getElementById("taskList");
+
+        
+    </script>
+    <script src="_lab6.js">
+
+    </script>
+
+</body>
+</html>

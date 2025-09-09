@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body>
+    <form action="HomePage.html">
+        <input type="text" id="user" name="user" /><br /><br />
+        <input type="password" id="pass" name="pass" /><br /><br />
+        <input type="submit"  value="LogIn" id="btn"/>
+
+
+
+    </form>
+    <script>
+        
+        btn.addEventListener("click", function () {
+            //document.cookie = `user=${user.value};expires= Fri, 13 Sep 2025 12:00:00 UTC;`
+            //document.cookie = `pass=${pass.value}`
+
+            localStorage.setItem("user", user.value)
+
+        })
+    </script>
+</body>
+</html>

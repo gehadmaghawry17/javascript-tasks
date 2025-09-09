@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <style>
+       div{
+           width:200px;
+           height:200px;
+           background-color:lightcoral;
+       }
+   </style>
+</head>
+<body>
+
+    <div id="result">
+
+    </div>
+    <script>
+        //  result.innerText = document.cookie.split(";")[0].split("=")[1]
+        result.innerText = localStorage.getItem("user")
+    </script>
+</body>
+</html>
